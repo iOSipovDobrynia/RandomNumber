@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="1023.6641221374045" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="7nt-qg-7tS">
             <objects>
-                <viewController id="QHo-eq-RxH" sceneMemberID="viewController">
+                <viewController id="QHo-eq-RxH" customClass="SettingsViewController" customModule="RandomNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dgM-y7-LvN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +123,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Save">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="dHA-jq-5TF" kind="unwind" unwindAction="unwindFor:" id="c2e-pk-WCA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUh-dY-bcK">
                                         <rect key="frame" x="0.0" y="50" width="114.66666666666667" height="50"/>
@@ -131,6 +134,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Cancel">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cancelButtonPressed" destination="QHo-eq-RxH" eventType="touchUpInside" id="Oid-qW-PHp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -146,8 +152,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="84D-92-eWA"/>
+                    <connections>
+                        <outlet property="maximumValueTF" destination="2YX-aK-7Mt" id="ZJs-AA-vYJ"/>
+                        <outlet property="minimumValueTF" destination="SYx-Ty-p0A" id="U8g-NN-vMR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYV-ih-WnT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dHA-jq-5TF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1989" y="4"/>
         </scene>
